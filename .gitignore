@@ -30,3 +30,11 @@
 *.exe
 *.out
 *.app
+*.lock
+*.ide
+*.ide-shm
+*.ide-wal
+.vs/VSWorkspaceState.json
+.vs/slnx.sqlite
+.vs/AlmostGETit/v15/.suo
+C#/myFirstApp/.vs/myFirstApp/v15/.suo
