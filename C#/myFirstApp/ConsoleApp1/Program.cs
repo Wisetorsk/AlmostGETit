@@ -12,8 +12,35 @@ namespace ConsoleApp1
         // Fields (Semi-Global Variables)
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello WORLD!" );
-            Console.WriteLine("Antall Parametere: " + args.Length);
+            var range = 250;
+            var counts = new int[range];
+            var percentages = new double[range];
+            var text = "something";
+            while (!string.IsNullOrWhiteSpace(text))
+            {
+                text = Console.ReadLine();
+                foreach (var character in text.ToUpper() ?? string.Empty)
+                {
+                    counts[(int)character]++;
+                }
+
+                var sum = counts.Sum();
+                var percentageFactor = Convert.ToDouble(sum);
+
+                for (var i = 0; i < counts.Length; i++)
+                {
+                    double percent = counts[i] / percentageFactor * 100;
+                    percentages[i] = percent;
+                }
+
+                for (var i = 0; i < range; i++)
+                {
+                    if (counts[i] <= 0) continue;
+                    var character = (char)i;
+                    Console.WriteLine(character + " - " + String.Format("{0, 10}", Math.Round(percentages[i], 2)) + '%');
+                }
+            }
+            Console.WriteLine("Number of input parameters: " + args.Length);
             Console.WriteLine("All the numbers in the arguments sum to: " + SumArgs(args));
         }
 
