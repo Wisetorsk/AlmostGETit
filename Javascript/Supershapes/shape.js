@@ -27,7 +27,7 @@ class Supershape {
         };
     }
 
-    map(offsetX=0, offsetY=0, scale=1) {
+    map(offsetX, offsetY, scale) {
         for (let i of this.range) {
             const r = this.calculate(i);
             this.points.x.push((r * Math.cos(i)) * scale + offsetX);
@@ -37,6 +37,28 @@ class Supershape {
 
     showParams() {
         console.table(this.parameters);
+    }
+
+    newShape(offsetX = 0, offsetY = 0, scale = 1, canvas = false) {
+        if (canvas) {
+            canvas.wipe();
+        }
+        this.points = {
+            x: [],
+            y: []
+        }
+        this.parameters = {
+            steps:10000,
+            n1: (Math.random() * 20) + 5,
+            n2: (Math.random() * 20) + 5,
+            n3: (Math.random() * 20) + 10,
+            m1: (Math.random() * 20) + 20,
+            m2: (Math.random() * 20) + 20,
+            a: (Math.random() * 10),
+            b: (Math.random() * 10),
+            factor: 10
+        }
+        this.map(offsetX, offsetY, scale);
     }
 
     calculate(theta) {
@@ -99,14 +121,20 @@ class Painter {
 
     drawShape(xy) {
         console.log('draw');
-        console.log(xy);
-        this.ctx.clearRect(0, 0, canvas.width, canvas.height);
+        //console.log(xy);
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.beginPath();
         for (let index = 0; index < xy.x.length; index++) {
             const x = xy.x[index];
             const y = xy.y[index];
             this.ctx.lineTo(x, y);
         }
         this.ctx.stroke();
+    }
+
+    wipe() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.beginPath();
     }
 
     pixelMap(dataset) {
