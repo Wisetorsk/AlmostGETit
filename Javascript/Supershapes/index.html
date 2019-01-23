@@ -14,10 +14,10 @@
     const scale = 150;
     let shape = new Supershape();
     let canvas = new Painter('canvas');
-    shape.newShape(canvas.canvas.width / 2, canvas.canvas.height / 2, 50, canvas);
+    shape.newShape(canvas.canvas.width / 2, canvas.canvas.height / 2, 100, canvas);
     canvas.drawShape(shape.points);
     function draw(){
-        shape.newShape(canvas.canvas.width / 2, canvas.canvas.height / 2, 50, canvas);
+        shape.newShape(canvas.canvas.width / 2, canvas.canvas.height / 2, 100, canvas);
         canvas.drawShape(shape.points);
     }
     setInterval(draw, 10000);

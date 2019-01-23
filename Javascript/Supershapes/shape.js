@@ -8,7 +8,7 @@ class Supershape {
         m2 = (Math.random() * 20) + 20,
         a = (Math.random() * 10) ,
         b = (Math.random() * 10) ,
-        factor = 10) {
+        factor = 3) {
         this.range = [...Array(steps).keys()].map(i => i*2*Math.PI*factor / (steps - 1));
         this.parameters = {
             drawSteps: steps,
@@ -56,7 +56,7 @@ class Supershape {
             m2: (Math.random() * 20) + 20,
             a: (Math.random() * 10),
             b: (Math.random() * 10),
-            factor: 10
+            factor: (Math.random() * 5) + 3
         }
         this.map(offsetX, offsetY, scale);
     }
