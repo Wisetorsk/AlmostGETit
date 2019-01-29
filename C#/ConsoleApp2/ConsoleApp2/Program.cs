@@ -1,62 +1,105 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
+    
     class Program
     {
+        static readonly Random rand = new Random();
+
         static void Main(string[] args)
         {
-            if (args.Length <= 0)
+            if (!IsValid(args))
             {
-                help();
+                Help();
+                return;
             }
-            else if (args.Length == 2)
+            var letters = args[1];
+            var value = int.Parse(args[0]);
+            var pass = ReturnPass(letters, value);
+            Console.WriteLine(pass);
+        }
+
+        public static bool IsValid(string[] args)
+        {
+            switch (args.Length)
             {
-                if (int.TryParse(args[0], out var value))
-                {
+                case 2 when int.TryParse(args[0], out int val):
                     // Val is now int
-                    string letters = args[1];
-                    foreach (char letter in letters)
-                    {
-                        // Runs through the settings
-                        switch (letter)
-                        {
-                            case 'l':
-                                break;
-
-                            case 'L':
-                                break;
-
-                            case 'd':
-                                break;
-
-                            case 's':
-                                break;
-                                
-                            default:
-                                help();
-                                break;
-                        }
-                    }
-                }
-                else
-                {
-                    help();
-                }
-                
+                    return true;
+                default:
+                    return false;
             }
         }
 
-        static bool IsValid(string arguments)
+        public static string GetRandomType(string input, char inType='0')
+        {
+            string outVar = "";
+            char type = (inType == '0') ? input[rand.Next(input.Length)] : inType;
+            
+            switch (type)
+            {
+                case 's':
+                    outVar += GetRandomSpecial();
+                    break;
+                case 'L':
+                    outVar += char.ToUpper(GetRandomChar());
+                    break;
+                case 'l':
+                    outVar += GetRandomChar();
+                    break;
+                case 'd':
+                    outVar += GetRandomInt();
+                    break;
+                default:
+                    Console.WriteLine("Parse Error");
+                    Help();
+                    outVar = null;
+                    break;
+                    //return outVar;
+            }
+
+            return outVar;
+        }
+
+        public static string ReturnPass(string input, int numberOfLetters)
+        {
+            var outVar = "";
+            foreach (char c in input)
+            {
+                outVar += GetRandomType(input, c);
+            }
+            for (var i = 0; i < numberOfLetters-input.Length; i++)
+            {
+                outVar += GetRandomType(input);
+            }
+            return outVar;
+        }
+
+        public static char GetRandomSpecial()
+        {
+            string sp = "!/\"#¤%&/(){}[]";
+            return sp[rand.Next(sp.Length)];
+        }
+
+        public static char GetRandomChar()
+        {
+            
+            var ch = (char) ('a' + rand.Next(0, 25));
+            return ch;
+        }
+
+        public static int GetRandomInt()
+        {
+            return rand.Next(0, 9);
+        }
+
+        public static bool IsValid(string arguments)
         {
             return true;
         }
 
-        static void help()
+        static void Help()
         {
             Console.WriteLine("Password Generator");
             Console.WriteLine("  Options:");
