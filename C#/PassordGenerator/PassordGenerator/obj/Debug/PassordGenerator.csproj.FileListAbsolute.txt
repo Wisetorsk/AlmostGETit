@@ -5,3 +5,10 @@ C:\Users\thewi\source\repos\AlmostGETit\C#\PassordGenerator\PassordGenerator\obj
 C:\Users\thewi\source\repos\AlmostGETit\C#\PassordGenerator\PassordGenerator\obj\Debug\PassordGenerator.csproj.CoreCompileInputs.cache
 C:\Users\thewi\source\repos\AlmostGETit\C#\PassordGenerator\PassordGenerator\obj\Debug\PassordGenerator.exe
 C:\Users\thewi\source\repos\AlmostGETit\C#\PassordGenerator\PassordGenerator\obj\Debug\PassordGenerator.pdb
+C:\Users\thewi\Documents\GitHub\AlmostGETit\C#\PassordGenerator\PassordGenerator\bin\Debug\PassordGenerator.exe.config
+C:\Users\thewi\Documents\GitHub\AlmostGETit\C#\PassordGenerator\PassordGenerator\bin\Debug\PassordGenerator.exe
+C:\Users\thewi\Documents\GitHub\AlmostGETit\C#\PassordGenerator\PassordGenerator\bin\Debug\PassordGenerator.pdb
+C:\Users\thewi\Documents\GitHub\AlmostGETit\C#\PassordGenerator\PassordGenerator\obj\Debug\PassordGenerator.csprojAssemblyReference.cache
+C:\Users\thewi\Documents\GitHub\AlmostGETit\C#\PassordGenerator\PassordGenerator\obj\Debug\PassordGenerator.csproj.CoreCompileInputs.cache
+C:\Users\thewi\Documents\GitHub\AlmostGETit\C#\PassordGenerator\PassordGenerator\obj\Debug\PassordGenerator.exe
+C:\Users\thewi\Documents\GitHub\AlmostGETit\C#\PassordGenerator\PassordGenerator\obj\Debug\PassordGenerator.pdb

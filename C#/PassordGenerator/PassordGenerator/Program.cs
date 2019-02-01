@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Schema;
+using System.Linq;
+
 
 namespace PassordGenerator
 {
     class Program
     {
-        public static string pattern;
-        public static int numInt;
-        public static char[] validChars = {'l', 'L', 's', 'd'};
-        
+        public static string Pattern;
+        public static int NumInt;
+        public static char[] ValidChars = {'l', 'L', 's', 'd'};
+        private static readonly Random _rand = new Random();
 
         static void Main(string[] args)
         {
@@ -26,48 +25,81 @@ namespace PassordGenerator
         public static void ParseArgs(string[] args)
         {
             var pass = "";
-            Console.WriteLine(pattern);
-            Console.WriteLine(numInt);
+            foreach (char letter in Pattern)
+            {
+                Console.WriteLine(letter);
+                switch (letter)
+                {
+                    case 'l':
+                        pass += WriteRandomLowerCaseLetter();
+                        break;
+                    case 'L':
+                        pass += WriteRandomUpperCaseLetter();
+                        break;
+                    case 's':
+                        pass += WriteRandomSpecialCharacter();
+                        break;
+                    case 'd':
+                        pass += WriteRandomDigit();
+                        break;
+                    default:
+                        ShowHelpText();
+                        break;
+                }
+            }
+
+            for (var i = 0; i < (NumInt - Pattern.Length); i++)
+            {
+                pass += WriteRandomLowerCaseLetter();
+            }
             Console.WriteLine(pass);
+            
         }
 
         public static bool IsValid(string[] args)
         {
-            if (args.Length != 0) return false;
+            if (args.Length == 0 || args.Length == 1) return false;
             if (int.TryParse(args[0], out var val))
             {
-                numInt = val;
+                NumInt = val;
+            }
+            else
+            {
+                return false;
             }
             foreach (var c in args[1])
             {
-                if (!((IList) validChars).Contains(c))
+                if (!ValidChars.Contains(c))
                 {
                     return false;
                 }
             }
-            pattern = args[1];
+            Pattern = args[1];
+            if (Pattern.Length > NumInt) return false;
             return true;
         }
 
 
         public static char WriteRandomLowerCaseLetter()
         {
-            return 's';
+            return (char)('a' + _rand.Next(26));
         }
 
         public static char WriteRandomUpperCaseLetter()
         {
-            return 'S';
+            return char.ToUpper(WriteRandomLowerCaseLetter());
         }
 
         public static int WriteRandomDigit()
         {
-            return 1;
+            
+            return _rand.Next(10);
         }
 
         public static char WriteRandomSpecialCharacter()
         {
-            return '[';
+            var s = "!\"#¤%&/(){}[]";
+            return (char)s[_rand.Next(s.Length)];
         }
 
         public static void ShowHelpText()
@@ -90,6 +122,7 @@ namespace PassordGenerator
                 edgeL + tab + "Min. 1 upper case",
                 edgeL + tab + "Min. 2 special characters",
                 edgeL + tab + "Min. 2 digits",
+                edgeL + "Pattern must be same length og less than first argument",
                 line
             };
             foreach (var t in helpString)
