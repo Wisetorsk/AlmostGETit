@@ -1,0 +1,7 @@
+I:\GET\source\repos\AlmostGETit\C#\wordpuzzle\wordpuzzle\bin\Debug\wordpuzzle.exe.config
+I:\GET\source\repos\AlmostGETit\C#\wordpuzzle\wordpuzzle\bin\Debug\wordpuzzle.exe
+I:\GET\source\repos\AlmostGETit\C#\wordpuzzle\wordpuzzle\bin\Debug\wordpuzzle.pdb
+I:\GET\source\repos\AlmostGETit\C#\wordpuzzle\wordpuzzle\obj\Debug\wordpuzzle.csprojAssemblyReference.cache
+I:\GET\source\repos\AlmostGETit\C#\wordpuzzle\wordpuzzle\obj\Debug\wordpuzzle.csproj.CoreCompileInputs.cache
+I:\GET\source\repos\AlmostGETit\C#\wordpuzzle\wordpuzzle\obj\Debug\wordpuzzle.exe
+I:\GET\source\repos\AlmostGETit\C#\wordpuzzle\wordpuzzle\obj\Debug\wordpuzzle.pdb
