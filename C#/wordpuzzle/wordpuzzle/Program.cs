@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,8 @@ namespace wordpuzzle
     class Program
     {
         public static string filename = @"I:\GET\source\repos\AlmostGETit\C#\wordpuzzle\ordbank_bm\fullform_bm.txt";
-
+        private static readonly Random _Rnd = new Random();
+        public static string[] output;
         static void Main(string[] args)
         {
             string[] lines = ReadFile(filename);
@@ -23,13 +25,54 @@ namespace wordpuzzle
                     validWords.Add(V);
                 }
             }
+            output = validWords.ToArray();
 
-            string[] output = validWords.ToArray();
-            foreach (var l in output)
+            string randomWord = RandomWord(1, output)[0];
+            string pattern = randomWord.Substring(0, 3);
+            int stop = 0;
+            string returnWord = "null";
+            for (int i = 0; i < 3; i++)
             {
-                Console.WriteLine(l);
+                if (SearchWord(pattern.Substring(0, (3 + i)), output))
+                {
+                    stop = i;
+                    returnWord = randomWord;
+                    Console.WriteLine("break");
+                    break;
+                }
             }
+
+            Console.WriteLine("Found a match {0}, {1}, {2}", pattern, returnWord, randomWord);
         }
+
+        static bool SearchWord(string pattern, string[] words)
+        {
+            foreach (var w in words)
+            {
+                if (MatchPattern(pattern, w)) return true;
+            }
+
+            return false;
+        }
+
+        static bool MatchPattern(string pattern, string word)
+        {
+            return (pattern == word.Substring(0, pattern.Length));
+        }
+
+        static string[] RandomWord(int numbers, string[] words)
+        {
+            List<string> randomOutput = new List<string>();
+            for (int i = 0; i < numbers; i++)
+            {
+                int number = _Rnd.Next(words.Length);
+                randomOutput.Add(words[number]);
+                output = output.Where(val => val != words[number]).ToArray();
+            }
+
+            return randomOutput.ToArray();
+        }
+
 
         static string[] ReadFile(string filename)
         {

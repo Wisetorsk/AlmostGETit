@@ -1,0 +1,7 @@
+I:\GET\source\repos\AlmostGETit\C#\TrePaaRad\TrePaaRad\bin\Debug\TrePaaRad.exe.config
+I:\GET\source\repos\AlmostGETit\C#\TrePaaRad\TrePaaRad\bin\Debug\TrePaaRad.exe
+I:\GET\source\repos\AlmostGETit\C#\TrePaaRad\TrePaaRad\bin\Debug\TrePaaRad.pdb
+I:\GET\source\repos\AlmostGETit\C#\TrePaaRad\TrePaaRad\obj\Debug\TrePaaRad.csprojAssemblyReference.cache
+I:\GET\source\repos\AlmostGETit\C#\TrePaaRad\TrePaaRad\obj\Debug\TrePaaRad.csproj.CoreCompileInputs.cache
+I:\GET\source\repos\AlmostGETit\C#\TrePaaRad\TrePaaRad\obj\Debug\TrePaaRad.exe
+I:\GET\source\repos\AlmostGETit\C#\TrePaaRad\TrePaaRad\obj\Debug\TrePaaRad.pdb

@@ -1,0 +1,7 @@
+I:\GET\source\repos\AlmostGETit\C#\CSharpClasses\CSharpClasses\bin\Debug\CSharpClasses.exe.config
+I:\GET\source\repos\AlmostGETit\C#\CSharpClasses\CSharpClasses\bin\Debug\CSharpClasses.exe
+I:\GET\source\repos\AlmostGETit\C#\CSharpClasses\CSharpClasses\bin\Debug\CSharpClasses.pdb
+I:\GET\source\repos\AlmostGETit\C#\CSharpClasses\CSharpClasses\obj\Debug\CSharpClasses.csprojAssemblyReference.cache
+I:\GET\source\repos\AlmostGETit\C#\CSharpClasses\CSharpClasses\obj\Debug\CSharpClasses.csproj.CoreCompileInputs.cache
+I:\GET\source\repos\AlmostGETit\C#\CSharpClasses\CSharpClasses\obj\Debug\CSharpClasses.exe
+I:\GET\source\repos\AlmostGETit\C#\CSharpClasses\CSharpClasses\obj\Debug\CSharpClasses.pdb
