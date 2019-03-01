@@ -1,0 +1,2 @@
+I:\GET\source\repos\AlmostGETit\C#\RandomSquares\RandomSquares\obj\Debug\RandomSquares.csprojAssemblyReference.cache
+I:\GET\source\repos\AlmostGETit\C#\RandomSquares\RandomSquares\obj\Debug\RandomSquares.csproj.CoreCompileInputs.cache
